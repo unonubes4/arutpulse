@@ -11722,7 +11722,7 @@
                                 {
                                     key: "_extractTexture",
                                     value: function (e, t, r) {
-                                        var n = document.createElement("canvas");
+                                        var n = document.createElement("canvasgiosculp");
                                         (n.width = t), (n.height = r);
                                         var i = new Uint8Array(4 * t * r);
                                         if (e.checkFramebufferStatus(e.FRAMEBUFFER) !== e.FRAMEBUFFER_COMPLETE) return console.error("FRAMEBUFFER not complete"), n;
@@ -17185,7 +17185,7 @@
                                     (this._cameraSpeed = 0.25),
                                     (this._pixelRatio = 1),
                                     (this._viewport = document.getElementById("viewport")),
-                                    (this._canvas = document.getElementById("canvas")),
+                                    (this._canvas = document.getElementById("canvasgiosculp")),
                                     (this._canvasWidth = 0),
                                     (this._canvasHeight = 0),
                                     (this._canvasOffsetLeft = 0),
@@ -17466,7 +17466,7 @@
                                         key: "initWebGL",
                                         value: function () {
                                             var e = { antialias: !1, stencil: !0 },
-                                                t = document.getElementById("canvas"),
+                                                t = document.getElementById("canvasgiosculp"),
                                                 r = (this._gl = t.getContext("webgl", e) || t.getContext("experimental-webgl", e));
                                             r
                                                 ? (vi.initWebGLExtensions(r),
@@ -17704,7 +17704,7 @@
                                     {
                                         key: "onLoadAlphaImage",
                                         value: function (e, t, r) {
-                                            var n = document.createElement("canvas");
+                                            var n = document.createElement("canvasgiosculp");
                                             (n.width = e.width), (n.height = e.height);
                                             var i = n.getContext("2d");
                                             i.drawImage(e, 0, 0);
