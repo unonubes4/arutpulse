@@ -15892,7 +15892,7 @@
                                         var e = this._topbar.addMenu();
                                         (e.domContainer.innerHTML = (0, C.Z)("about")),
                                             e.domContainer.addEventListener("mousedown", function () {
-                                                window.open("http://stephaneginier.com", "_blank");
+                                             alert("programa creado Gioenterprise "); //   window.open("http://stephaneginier.com", "_blank");
                                             });
                                     },
                                 },
