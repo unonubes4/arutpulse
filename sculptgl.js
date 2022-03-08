@@ -11722,7 +11722,7 @@
                                 {
                                     key: "_extractTexture",
                                     value: function (e, t, r) {
-                                        var n = document.createElement("canvasgiosculp");
+                                        var n = document.createElement("canvas");
                                         (n.width = t), (n.height = r);
                                         var i = new Uint8Array(4 * t * r);
                                         if (e.checkFramebufferStatus(e.FRAMEBUFFER) !== e.FRAMEBUFFER_COMPLETE) return console.error("FRAMEBUFFER not complete"), n;
@@ -14252,20 +14252,25 @@
                                 },
                                 {
                                     key: "updateVisibility",
-                                    value: function () {//aca giovanni
+                                    value: function () {//aca giocanni
                                         var e = this._main.getMesh();
                                         if (e) {
-                                      
-                                            
-                                         
-                                               var t = e.getShaderType();
+                                            var t = e.getShaderType();
+                                            this._ctrlMatcapTitle.setVisibility(t === s.Z.Shader.PBR),
+                                                this._ctrlMatcap.setVisibility(t === s.Z.Shader.PBR),
+                                                this._ctrlImportMatcap.setVisibility(t === s.Z.Shader.PBR),
+                                                this._ctrlExposure.setVisibility(t === s.Z.Shader.PBR),
+                                                this._ctrlEnvTitle.setVisibility(t === s.Z.Shader.PBR),
+                                                this._ctrlEnv.setVisibility(t === s.Z.Shader.PBR),
+                                                this._ctrlUV.setVisibility(t === s.Z.Shader.UV);
+                                          /*   var t = e.getShaderType();
                                             this._ctrlMatcapTitle.setVisibility(t === s.Z.Shader.MATCAP),
                                                 this._ctrlMatcap.setVisibility(t === s.Z.Shader.MATCAP),
                                                 this._ctrlImportMatcap.setVisibility(t === s.Z.Shader.MATCAP),
                                                 this._ctrlExposure.setVisibility(t === s.Z.Shader.PBR),
                                                 this._ctrlEnvTitle.setVisibility(t === s.Z.Shader.PBR),
                                                 this._ctrlEnv.setVisibility(t === s.Z.Shader.PBR),
-                                                this._ctrlUV.setVisibility(t === s.Z.Shader.UV); 
+                                                this._ctrlUV.setVisibility(t === s.Z.Shader.UV); */
                                         }
                                     },
                                 },
@@ -15892,7 +15897,7 @@
                                         var e = this._topbar.addMenu();
                                         (e.domContainer.innerHTML = (0, C.Z)("about")),
                                             e.domContainer.addEventListener("mousedown", function () {
-                                             alert("programa creado Gioenterprise "); //   window.open("http://stephaneginier.com", "_blank");
+                                                alert("programa creado por Gioenterprise "); ; //  window.open("http://stephaneginier.com", "_blank");
                                             });
                                     },
                                 },
@@ -17185,7 +17190,7 @@
                                     (this._cameraSpeed = 0.25),
                                     (this._pixelRatio = 1),
                                     (this._viewport = document.getElementById("viewport")),
-                                    (this._canvas = document.getElementById("canvasgiosculp")),
+                                    (this._canvas = document.getElementById("canvas")),
                                     (this._canvasWidth = 0),
                                     (this._canvasHeight = 0),
                                     (this._canvasOffsetLeft = 0),
@@ -17466,7 +17471,7 @@
                                         key: "initWebGL",
                                         value: function () {
                                             var e = { antialias: !1, stencil: !0 },
-                                                t = document.getElementById("canvasgiosculp"),
+                                                t = document.getElementById("canvas"),
                                                 r = (this._gl = t.getContext("webgl", e) || t.getContext("experimental-webgl", e));
                                             r
                                                 ? (vi.initWebGLExtensions(r),
@@ -17704,7 +17709,7 @@
                                     {
                                         key: "onLoadAlphaImage",
                                         value: function (e, t, r) {
-                                            var n = document.createElement("canvasgiosculp");
+                                            var n = document.createElement("canvas");
                                             (n.width = e.width), (n.height = e.height);
                                             var i = n.getContext("2d");
                                             i.drawImage(e, 0, 0);
@@ -21952,7 +21957,7 @@
                                 e
                             );
                         })();
-                    (Picking.INIT_ALPHAS_NAMES = [(0, gui_GuiTR__WEBPACK_IMPORTED_MODULE_3__.Z)("alphaSquare"), (0, gui_GuiTR__WEBPACK_IMPORTED_MODULE_3__.Z)("alphaSkin"),(0, gui_GuiTR__WEBPACK_IMPORTED_MODULE_3__.Z)("alphab11")]), (Picking.INIT_ALPHAS_PATHS = ["square.jpg", "skin.jpg","b11.png"]);
+                        (Picking.INIT_ALPHAS_NAMES = [(0, gui_GuiTR__WEBPACK_IMPORTED_MODULE_3__.Z)("alphaSquare"), (0, gui_GuiTR__WEBPACK_IMPORTED_MODULE_3__.Z)("alphaSkin"),(0, gui_GuiTR__WEBPACK_IMPORTED_MODULE_3__.Z)("alphab11")]), (Picking.INIT_ALPHAS_PATHS = ["square.jpg", "skin.jpg","b11.png"]);
                     var readAlphas = function readAlphas() {
                         if (window.module && window.module.exports) {
                             var fs = eval("require")("fs"),
@@ -21962,8 +21967,6 @@
                                 if (!e)
                                     for (var r = 0; r < t.length; ++r) {
                                         var n = t[r];
-                                    
-                                        
                                         "square.jpg" != n && "skin.jpg" != n && (Picking.INIT_ALPHAS_NAMES.push(n), Picking.INIT_ALPHAS_PATHS.push(n));
                                     }
                             });
